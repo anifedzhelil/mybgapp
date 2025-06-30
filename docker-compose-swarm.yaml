@@ -1,8 +1,8 @@
 services:
     web:
-	image: anifedzhelil/mybgapp-web
-	deploy:
-	      replicas: 5 
+  image: anifedzhelil/mybgapp-web
+  deploy:
+        replicas: 5 
         ports:
             - 8080:80
         volumes:
@@ -10,8 +10,8 @@ services:
         networks:
             - app-network
     db:
-	image: anifedzhelil/mybgapp-db
-        nertworks:
+  image: anifedzhelil/mybgapp-db
+        networks:
             - app-network
            environment:
             MYSQL_ROOT_PASSWORD_FILE: /run/secrets/db_root_password
